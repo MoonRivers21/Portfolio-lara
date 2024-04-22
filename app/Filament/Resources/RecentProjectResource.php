@@ -26,6 +26,9 @@ class RecentProjectResource extends Resource
                     ->maxLength(255),
 
                 Forms\Components\Select::make('tech_stack_id')
+                    ->relationship('tech_stacks', 'title')
+                    ->searchable()
+                    ->preload()
                     ->label('Tech Stack')
                     ->multiple(),
 
@@ -56,7 +59,16 @@ class RecentProjectResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('cover_image'),
+                Tables\Columns\ImageColumn::make('cover_image')
+                    ->circular(),
+
+                Tables\Columns\ImageColumn::make('images')
+                    ->circular()
+                    ->stacked()
+                    ->limit(3)
+                    ->limitedRemainingText(),
+
+
                 Tables\Columns\TextColumn::make('project_title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('date_develop')

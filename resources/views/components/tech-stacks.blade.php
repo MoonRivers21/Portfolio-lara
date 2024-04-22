@@ -1,3 +1,4 @@
+@props(['techstacks'])
 
 <section class="ftco-section" id="skills-section">
     <div class="container">
@@ -8,12 +9,11 @@
             </div>
         </div>
         <div class="row ">
-            <x-tech-stacks-item />
-            <x-tech-stacks-item />
-            <x-tech-stacks-item />
-            <x-tech-stacks-item />
-            <x-tech-stacks-item />
-            <x-tech-stacks-item />
+            @foreach($techstacks as $techstack)
+                <x-tech-stacks-item :stack_title="$techstack->title" :stack_img="$techstack->logoImg()"/>
+            @endforeach
+
+
         </div>
     </div>
 </section>

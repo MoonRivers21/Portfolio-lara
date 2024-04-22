@@ -18,11 +18,25 @@ class TechnicalSkill extends Model
     /**
      * Calculate the experience in years.
      *
-     * @return int
+     * @return string
      */
-    public function calculateExperienceInYears(): int
+
+    public function calculateExperienceFormatted(): string
     {
-        return Carbon::parse($this->started_yr)->diffInYears(now());
+        $startDate = Carbon::parse($this->started_yr);
+        $endDate = now();
+
+        $totalMonths = $startDate->diffInMonths($endDate);
+        $years = intdiv($totalMonths, 12);
+        $months = $totalMonths % 12;
+
+        if ($years >= 2) {
+            return "$years yrs";
+        } elseif ($years == 1) {
+            return "$years yr";
+        } else {
+            return "$months months";
+        }
     }
 
 

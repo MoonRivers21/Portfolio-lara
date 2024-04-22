@@ -47,7 +47,7 @@ class TechnicalSkillResource extends Resource
                 Tables\Columns\TextColumn::make('id')
                     ->alignCenter()
                     ->label('Experience in Yrs')
-                    ->formatStateUsing(fn($record) => $record->calculateExperienceInYears()),
+                    ->formatStateUsing(fn($record) => $record->calculateExperienceFormatted()),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

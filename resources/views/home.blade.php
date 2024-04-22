@@ -9,10 +9,10 @@
     <x-about-me/>
 
     {{--  Technical Skills  --}}
-    <x-technical-skills/>
+    <x-technical-skills :techskills="$techskills"/>
 
     {{--  TechStacks  --}}
-    <x-tech-stacks/>
+    <x-tech-stacks :techstacks="$techstacks"/>
 
     {{--  Recent Projects  --}}
     <x-recent-project/>

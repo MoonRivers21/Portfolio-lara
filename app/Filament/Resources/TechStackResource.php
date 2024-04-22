@@ -25,6 +25,7 @@ class TechStackResource extends Resource
                     ->autocapitalize('words')
                     ->required()
                     ->maxLength(255),
+
                 Forms\Components\FileUpload::make('img')
                     ->image()
                     ->directory('tech-stack-image')
@@ -52,7 +53,7 @@ class TechStackResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()

@@ -14,4 +14,13 @@ class TechStack extends Model
         'img_link',
         'img',
     ];
+
+
+    public function logoImg(): string
+    {
+        $img = (!empty($this->img)) ? $this->img : $this->img_link;
+        return $img;
+    }
+
+
 }

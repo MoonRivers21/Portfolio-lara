@@ -32,10 +32,7 @@
                         </div>
                         <div class="ftco-animate">
                             {!!   $experience->job_desc !!}
-
                         </div>
-
-
                     </div>
 
                 </div>

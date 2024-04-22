@@ -1,3 +1,4 @@
+@props(['techskills'])
 
 <section class="ftco-section" id="skills-section">
     <div class="container">
@@ -8,12 +9,12 @@
             </div>
         </div>
         <div class="row">
-            <x-technical-skills-item />
-            <x-technical-skills-item />
-            <x-technical-skills-item />
-            <x-technical-skills-item />
-            <x-technical-skills-item />
-            <x-technical-skills-item />
+            @foreach($techskills as $techskill)
+                <x-technical-skills-item
+                    :stack_title="$techskill->stack_title"
+                    :yr_exp="$techskill->calculateExperienceFormatted()"/>
+            @endforeach
+
 
         </div>
     </div>
