@@ -15,7 +15,7 @@
     <x-tech-stacks :techstacks="$techstacks"/>
 
     {{--  Recent Projects  --}}
-    <x-recent-project/>
+    <x-recent-project :projects="$recentProjects"/>
 
     {{--  Contact Me  --}}
     <x-contact-me/>

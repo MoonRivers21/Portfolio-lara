@@ -1,3 +1,4 @@
+@props(['projects'])
 
 <section class="ftco-section ftco-project" id="projects-section">
     <div class="container">
@@ -9,15 +10,25 @@
             </div>
         </div>
         <div class="row">
-            <x-recent-project-item />
-            <x-recent-project-item />
-            <x-recent-project-item />
+            @foreach($projects as $project)
+
+                <x-recent-project-item
+                    :title="$project->project_title"
+                    :description="$project->longDescProject()"
+                    :shortDesc="$project->shortDescProject()"
+                    :projectImg="$project->cover_image"
+                    :techStacks="$project->techStacks($project->tech_stack_id)"
+
+                />
+
+            @endforeach
+
 
         </div>
 
         <div class="row justify-content-center mt-5">
             <div class="col-md-6 text-center ftco-animate">
-                <p><a href="#" class="btn btn-warning py-4 px-5"  target="_blank">Browse more</a></p>
+                <p><a href="#" class="btn btn-warning py-4 px-5" target="_blank">Browse more</a></p>
             </div>
         </div>
     </div>
