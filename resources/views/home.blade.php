@@ -18,7 +18,7 @@
     <x-recent-project :projects="$recentProjects"/>
 
     {{--  Contact Me  --}}
-    <x-contact-me/>
+    <x-contact-me :details="$personalDetails"/>
 
 
     <!-- loader -->

@@ -1,5 +1,4 @@
-
-
+@props(['details'])
 <section class="ftco-section contact-section mb-5" id="contact-section">
     <div class="container mb-5">
         <div class="row justify-content-center mb-2  ">
@@ -11,10 +10,24 @@
         </div>
 
         <div class="row d-flex contact-info ">
-            <x-contact-me-item />
-            <x-contact-me-item />
-            <x-contact-me-item />
-            <x-contact-me-item />
+            {{-- LinkedIn --}}
+            <x-contact-me-item :title="'LinkedIn'" :link="$details->linkedIn" :iconlink="'icon-linkedin'"/>
+
+            {{-- contact num --}}
+            <x-contact-me-item :title="'Mobile'" :link="$details->mobile"
+                               :iconlink="'fa fa-mobile fa-2x text-primary'"/>
+
+            {{-- email add --}}
+            <x-contact-me-item :title="'Email'" :link="$details->email"
+                               :iconlink="'icon-paper-plane'"/>
+
+            {{-- whatsapp --}}
+            <x-contact-me-item :title="'Email'" :link="$details->email"
+                               :iconlink="'icon-paper-plane'"/>
+
+            {{-- viber --}}
+            {{--            <x-contact-me-item/>--}}
+
         </div>
     </div>
 </section>
