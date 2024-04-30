@@ -1,12 +1,12 @@
-<x-app-layout>
+<x-app-layout :about="$personalDetails">
     {{--  Project slider  --}}
-    <x-project-slider/>
+    <x-project-slider :projectSlider="$projectSlider"/>
 
     {{--  Experience --}}
-    <x-experience :experiences="$experiences"/>
+    <x-experience :experiences="$experiences" :cvfile="$personalDetails->cv_file"/>
 
     {{--  About me  --}}
-    <x-about-me/>
+    <x-about-me :personalDetails="$personalDetails"/>
 
     {{--  Technical Skills  --}}
     <x-technical-skills :techskills="$techskills"/>

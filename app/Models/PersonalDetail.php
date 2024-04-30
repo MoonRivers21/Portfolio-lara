@@ -20,6 +20,9 @@ class PersonalDetail extends Model
         'facebook',
         'messenger',
         'birthdate',
+        'whatsapp',
+        'viber',
+        'cv_file'
     ];
 
 

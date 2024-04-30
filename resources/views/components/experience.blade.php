@@ -1,5 +1,5 @@
 @php use Carbon\Carbon; @endphp
-@props(['experiences'])
+@props(['experiences', 'cvfile'])
 <section class="ftco-section ftco-no-pb" id="resume-experience">
     <div class="container">
 
@@ -41,8 +41,13 @@
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-md-6 text-center ftco-animate">
-                <p><a href="#" class="btn btn-primary py-4 px-5" onclick="window.open('RSevillaCV.pdf')"
-                      target="_blank">Download CV</a></p>
+                <p>
+                    @if(!empty($cvfile))
+                        <a href="{{ asset('storage/'.$cvfile) }}"
+                           class="btn btn-primary py-4 px-5"
+                           target="_blank">Download CV</a>
+                    @endif
+                </p>
             </div>
         </div>
     </div>

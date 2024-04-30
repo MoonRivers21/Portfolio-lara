@@ -10,8 +10,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PersonalDetailResource extends Resource
 {
@@ -44,9 +42,21 @@ class PersonalDetailResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('facebook')
                     ->maxLength(255),
+
+                Forms\Components\TextInput::make('whatsapp')
+                    ->maxLength(255),
+
+                Forms\Components\TextInput::make('viber')
+                    ->maxLength(255),
+
                 Forms\Components\TextInput::make('messenger')
                     ->maxLength(255),
                 Forms\Components\DatePicker::make('birthdate'),
+
+                Forms\Components\FileUpload::make('cv_file')
+                    ->previewable()
+                    ->directory('cv-file')
+                    ->acceptedFileTypes(['application/pdf', 'application/msword'])
             ]);
     }
 

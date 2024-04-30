@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@props(['about'])
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -233,6 +234,7 @@
             z-index: -1;
         }
 
+
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -260,15 +262,24 @@
             <div class="col-md mb-5">
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2">About</h2>
-                    <p class="ftco-animate">Hi! Nick here, your dedicated Laravel developer with a focus on crafting
-                        seamless SaaS projects. Leveraging Laravel Filament, I ensure an intuitive admin experience.</p>
+                    <p class="ftco-animate">{{ $about->introFooter }}</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                        <li class="ftco-animate"><a href="https://www.linkedin.com/in/nickzworld"><span
-                                    class="icon-linkedin-square"></span></a></li>
-                        <li class="ftco-animate "><a href="https://www.fiverr.com/nick022190" class="bg-primary"><img
-                                    width="50" height="50" src="https://img.icons8.com/ios/50/fiverr--v2.png"
-                                    alt="fiverr--v2"/></a></li>
+                        @if(!empty($about->facebook))
+                            <li class="ftco-animate">
+                                <a target="_blank" href="{{ $about->facebook }}">
+                                    <span class="icon-facebook"></span>
+                                </a>
+                            </li>
+                        @endif
+
+                        @if(!empty($about->linkedIn))
+                            <li class="ftco-animate">
+                                <a target="_blank" href="{{ $about->linkedIn }}">
+                                    <span class="icon-linkedin-square"></span>
+                                </a>
+                            </li>
+                        @endif
+
 
                     </ul>
                 </div>
@@ -295,12 +306,13 @@
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon icon-map-marker"></span><span class="text">Pasig, Metro Manila, Philippines</span>
+                            <li><span class="icon icon-map-marker"></span><span
+                                    class="text">{{ $about->address }}</span>
                             </li>
-                            <li><a href="#"><span class="icon icon-phone"></span><span
-                                        class="text">+63 966 933 3429</span></a></li>
-                            <li><a href="mailto:nick022190@gmail.com"><span class="icon icon-envelope"></span><span
-                                        class="text">nick022190@gmail.com</span></a></li>
+                            <li><a href="tel:{{ $about->mobile }}"><span class="icon icon-phone"></span><span
+                                        class="text">{{ $about->mobile }}</span></a></li>
+                            <li><a href="mailto:{{ $about->email }}"><span class="icon icon-envelope"></span><span
+                                        class="text">{{ $about->email }}</span></a></li>
                         </ul>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -44,6 +45,12 @@ class RecentProject extends Model
     public function longDescProject()
     {
         return Str::limit($this->project_desc, 250);
+    }
+
+
+    public function reformmatedDate(): string
+    {
+        return Carbon::parse($this->date_develop)->format('M d, Y');
     }
 
 }

@@ -16,11 +16,13 @@ class HomeController extends Controller
         $experiences = Experience::all();
         $techskills = TechnicalSkill::all();
         $techstacks = TechStack::all();
-        $recentProjects = RecentProject::all();
+        $recentProjects = RecentProject::take(3)->get();
+        $projectSlider = RecentProject::take(5)->get();
         $personalDetails = PersonalDetail::first();
 
 
-        return view('home', compact('experiences', 'techskills', 'techstacks', 'recentProjects', 'personalDetails'));
+        return view('home',
+            compact('experiences', 'techskills', 'techstacks', 'recentProjects', 'personalDetails', 'projectSlider'));
 
 
     }

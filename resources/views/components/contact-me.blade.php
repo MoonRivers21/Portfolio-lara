@@ -21,13 +21,15 @@
             <x-contact-me-item :title="'Email'" :link="$details->email"
                                :iconlink="'icon-paper-plane'"/>
 
-            {{-- whatsapp --}}
-            <x-contact-me-item :title="'Email'" :link="$details->email"
-                               :iconlink="'icon-paper-plane'"/>
-
             {{-- viber --}}
-            {{--            <x-contact-me-item/>--}}
+            <x-contact-me-item :title="'Viber'" :link="$details->viber"
+                               :iconlink="'fas fa-phone fa-2x text-primary'"/>
 
+            {{-- whatsapp --}}
+            <x-contact-me-item :title="'Whatsapp'" :link="$details->whatsapp"
+                               :iconlink="'fas fa-comments fa-2x text-primary'"/>
+
+            
         </div>
     </div>
 </section>

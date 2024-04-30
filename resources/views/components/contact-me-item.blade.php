@@ -1,16 +1,27 @@
 @props(['title', 'link', 'iconlink'])
 
 @php
+    $label = '';
+    $links = '';
 
-
-    if(strtolower($title) == 'mobile'){
-       $link = 'tel:'.$link;
+    if(strtolower($title) == 'mobile' || strtolower($title) == 'viber' || strtolower($title) == 'whatsapp'){
+       $links = 'tel:'.$link;
+       $label = $link;
     }
 
     else if(strtolower($title) == 'email'){
-       $link = 'mailto:'.$link;
+       $links = 'mailto:'.$link;
+       $label = $link;
+
+    }else{
+       $links = $link;
+       $label = 'View '.$title;
+
     }
-    
+
+
+
+
 @endphp
 
 
@@ -20,6 +31,6 @@
             <span class="{{ $iconlink }}"></span>
         </div>
         <h3 class="mb-4">{{ $title }}</h3>
-        <p><a href="{{ $link }}" target="_blank">View {{ $title }}</a></p>
+        <p><a href="{{ $links }}" target="_blank">{{ $label }}</a></p>
     </div>
 </div>
