@@ -23,6 +23,6 @@
 
             </div>
         </div>
-        <a href="#" class="blog-slider__button">READ MORE</a>
+        <a target="_blank" href="{{ route('project.view', $project->id) }}" class="blog-slider__button">READ MORE</a>
     </div>
 </div>

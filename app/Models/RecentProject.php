@@ -42,6 +42,13 @@ class RecentProject extends Model
         return Str::limit($this->project_desc, 40);
     }
 
+
+    public function shortDesc(): string
+    {
+        return Str::limit($this->project_desc, 80);
+    }
+
+
     public function longDescProject()
     {
         return Str::limit($this->project_desc, 250);

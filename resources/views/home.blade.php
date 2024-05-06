@@ -1,4 +1,5 @@
 <x-app-layout :about="$personalDetails">
+
     {{--  Project slider  --}}
     <x-project-slider :projectSlider="$projectSlider"/>
 
@@ -19,8 +20,7 @@
 
     {{--  Contact Me  --}}
     <x-contact-me :details="$personalDetails"/>
-
-
+    
     <!-- loader -->
     <x-loader/>
 

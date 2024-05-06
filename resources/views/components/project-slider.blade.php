@@ -32,7 +32,8 @@
 
             <div class="row justify-content-center mt-5">
                 <div class="col-md-6 text-center ftco-animate">
-                    <p><a href="#" class="btn btn-warning py-4 px-5" target="_blank">Browse more</a></p>
+                    <p><a href="{{ route('project.index') }}" class="btn btn-warning py-4 px-5" target="_blank">Browse
+                            more</a></p>
                 </div>
             </div>
         </div>
