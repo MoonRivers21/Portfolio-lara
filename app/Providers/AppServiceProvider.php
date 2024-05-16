@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\View\Components\AppLayout;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -20,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Blade::component('app-layout', \App\View\Components\AppLayout::class);
+        Blade::component('app-layout', AppLayout::class);
+        Paginator::useBootstrapFour();
     }
 }

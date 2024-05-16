@@ -1,7 +1,9 @@
 @props(['project', 'techStacks'])
-<div class="col-md-4 d-flex ftco-animate">
-    <div class="blog-entry justify-content-end">
-        <a href="#" class="block-20 rounded"
+
+
+<div class="col-md-4 d-flex ftco-animate projectItem">
+    <div class="blog-entry justify-content-end projectItemItem">
+        <a href="{{ route('project.view', $project->id) }}" class="block-20 rounded imgCover"
            style="background-image: url({{ asset('storage/'.$project->cover_image) }}); background-size: contain;">
         </a>
         <div class="text mt-3 float-right d-block">
@@ -11,11 +13,11 @@
 
                 </p>
             </div>
-            <h3 class="heading"><a href="#">{{ $project->project_title }}</a>
+            <h3 class="heading"><a href="{{ route('project.view', $project->id) }}">{{ $project->project_title }}</a>
             </h3>
             <p>
-                {{ $project->longDescProject() }}
-                <a href="#" class="small">
+                {{ $project->shortDesc() }}
+                <a href="{{ route('project.view', $project->id) }}" class="small">
                     Read more
                 </a>
             </p>
@@ -29,4 +31,5 @@
             </div>
         </div>
     </div>
+
 </div>

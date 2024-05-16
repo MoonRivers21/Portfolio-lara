@@ -1,4 +1,5 @@
-<x-app-layout :about="$personalDetails">
+<x-app-layout :about="$personalDetails" :cvfile="$personalDetails->cv_file">
+
 
     {{--  Project slider  --}}
     <x-project-slider :projectSlider="$projectSlider"/>
@@ -20,7 +21,7 @@
 
     {{--  Contact Me  --}}
     <x-contact-me :details="$personalDetails"/>
-    
+
     <!-- loader -->
     <x-loader/>
 

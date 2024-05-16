@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Nick <span class="text-warning">Devs</span></a>
+        <a class="navbar-brand" href="{{ route('home') }}">Nick <span class="text-warning">Devs</span></a>
         <button class="navbar-toggler  fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu

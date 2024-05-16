@@ -1,4 +1,4 @@
-@props(['title', 'description', 'shortDesc', 'projectImg', 'techStacks'])
+@props(['title', 'description', 'shortDesc', 'projectImg', 'techStacks', 'link'])
 <div class="col-md-4 mt-3 ">
     <article class="card ftco-animate">
         <div class="cover-img">
@@ -15,7 +15,9 @@
 
 
             </div>
-            <p class="card_description ">{!! $description !!} <a href="#" class="text-danger">Read more</a></p>
+            <p class="card_description ">{!! $description !!} <a target="_blank"
+                                                                 href="{{ $link }}"
+                                                                 class="text-danger">Read more</a></p>
 
         </div>
     </article>

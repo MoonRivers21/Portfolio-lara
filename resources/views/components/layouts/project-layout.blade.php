@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@props(['about', 'project'])
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -34,6 +35,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/project-slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
@@ -46,10 +48,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style type="text/css">
+        .image-source-link {
+            color: #98C3D1;
+        }
 
+        .mfp-with-zoom .mfp-container,
+        .mfp-with-zoom.mfp-bg {
+            opacity: 0;
+            -webkit-backface-visibility: hidden;
+            /* ideally, transition speed should match zoom duration */
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        .mfp-with-zoom.mfp-ready .mfp-container {
+            opacity: 1;
+        }
+
+        .mfp-with-zoom.mfp-ready.mfp-bg {
+            opacity: 0.8;
+        }
+
+        .mfp-with-zoom.mfp-removing .mfp-container,
+        .mfp-with-zoom.mfp-removing.mfp-bg {
+            opacity: 0;
+        }
+
+
+    </style>
 </head>
 <body class="font-sans antialiased">
-
+<button class="back-to-top" type="button"></button>
 @include('components.layouts.project-navigation')
 
 <!-- Page Heading -->
@@ -66,6 +98,123 @@
     {{ $slot }}
 </main>
 
+<footer class="ftco-footer ftco-section ftco-animate">
+    <div class="container">
+        <div class="row">
+            <div class="col-md mb-5">
+                <div class="ftco-footer-widget">
+                    <h2 class="ftco-heading-2">Let's Connect</h2>
+
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+                        @if(!empty($about->facebook))
+                            <li class="ftco-animate">
+                                <a target="_blank" href="{{ $about->facebook }}">
+                                    <span class="icon-facebook"></span>
+                                </a>
+                            </li>
+                        @endif
+
+                        @if(!empty($about->linkedIn))
+                            <li class="ftco-animate">
+                                <a target="_blank" href="{{ $about->linkedIn }}">
+                                    <span class="icon-linkedin-square"></span>
+                                </a>
+                            </li>
+                        @endif
+
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md mb-5">
+                <div class="ftco-footer-widget mb-4 ml-md-4 ftco-animate" id="ftco-nav">
+
+                </div>
+            </div>
+
+            <div class="col-md mb-5">
+                <div class="ftco-footer-widget ftco-animate">
+                    <h2 class="ftco-heading-2">Have a Questions?</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon icon-map-marker"></span><span
+                                    class="text">{{ $about->address }}</span>
+                            </li>
+                            <li><a href="tel:{{ $about->mobile }}"><span class="icon icon-phone"></span><span
+                                        class="text">{{ $about->mobile }}</span></a></li>
+                            <li><a href="mailto:{{ $about->email }}"><span class="icon icon-envelope"></span><span
+                                        class="text">{{ $about->email }}</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    NickzRivers &copy;
+                    <script>document.write(new Date().getFullYear());</script>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="svg-container" style="height: 400px;">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%"
+             viewBox="0 160 1600 900" preserveAspectRatio="xMidYMax slice">
+            <defs>
+                <linearGradient id="bg">
+                    <stop offset="0%" style="stop-color:rgba(240, 255, 0, 0.09)"></stop>
+                    <stop offset="50%" style="stop-color:rgba(255, 240, 0, 0.3)"></stop>
+                    <stop offset="100%" style="stop-color:rgba(245, 230, 83, 0.62)"></stop>
+                </linearGradient>
+                <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+	s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z"/>
+            </defs>
+            <g>
+                <use xlink:href='#wave' opacity=".3">
+                    <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        dur="10s"
+                        calcMode="spline"
+                        values="270 230; -334 180; 270 230"
+                        keyTimes="0; .5; 1"
+                        keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                        repeatCount="indefinite"/>
+                </use>
+                <use xlink:href='#wave' opacity=".6">
+                    <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        dur="8s"
+                        calcMode="spline"
+                        values="-270 230;243 220;-270 230"
+                        keyTimes="0; .6; 1"
+                        keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                        repeatCount="indefinite"/>
+                </use>
+                <use xlink:href='#wave' opacty=".9">
+                    <animateTransform
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="translate"
+                        dur="6s"
+                        calcMode="spline"
+                        values="0 230;-140 200;0 230"
+                        keyTimes="0; .4; 1"
+                        keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                        repeatCount="indefinite"/>
+                </use>
+            </g>
+        </svg>
+
+    </div>
+
+</footer>
 
 </body>
 
@@ -89,8 +238,38 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
         integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    $('.popup-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        tLoading: 'Loading image #%curr%...',
+        mainClass: 'mfp-img-mobile',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1]
+        },
+        image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            titleSrc: function (item) {
+                return item.el.attr('title') + '<small>by NickDevs</small>';
+            }
+        },
+        zoom: {
+            enabled: true,
+            duration: 300, // don't foget to change the duration also in CSS
+            opener: function (element) {
+                return element.find('img');
+            }
+        }
+    });
+</script>
+
+
 <script id="rendered-js">
+
     var swiper = new Swiper('.blog-slider', {
         spaceBetween: 10,
         effect: 'fade',

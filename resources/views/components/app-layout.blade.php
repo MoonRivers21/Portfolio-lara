@@ -1,4 +1,4 @@
-@props(['about'])
+@props(['about', 'cvfile'])
     <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -50,7 +50,7 @@
 
 </head>
 <body class="font-sans antialiased">
-
+<button class="back-to-top" type="button"></button>
 @include('layouts.navigation')
 
 <!-- Page Heading -->
@@ -214,7 +214,7 @@
 
 <script src="{{ asset('js/main.js') }}"></script>
 
- 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
         integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

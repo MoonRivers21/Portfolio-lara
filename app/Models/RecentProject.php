@@ -37,6 +37,23 @@ class RecentProject extends Model
         return $stackTitles;
     }
 
+    public function techStacksWithImage(array $stackIds): array
+    {
+        // Retrieve the title and img_link fields for the given stack IDs
+        $stacks = TechStack::whereIn('id', $stackIds)->get(['title', 'img_link']);
+
+        // Transform the collection into an array
+        $stackDetails = $stacks->map(function ($stack) {
+            return [
+                'title' => $stack->title,
+                'img_link' => $stack->img_link,
+            ];
+        })->toArray();
+
+
+        return $stackDetails;
+    }
+
     public function shortDescProject()
     {
         return Str::limit($this->project_desc, 40);
@@ -45,7 +62,7 @@ class RecentProject extends Model
 
     public function shortDesc(): string
     {
-        return Str::limit($this->project_desc, 80);
+        return Str::limit($this->project_desc, 100);
     }
 
 
@@ -58,6 +75,11 @@ class RecentProject extends Model
     public function reformmatedDate(): string
     {
         return Carbon::parse($this->date_develop)->format('M d, Y');
+    }
+
+    public function getImagePaths(): array
+    {
+        return $this->images;
     }
 
 }

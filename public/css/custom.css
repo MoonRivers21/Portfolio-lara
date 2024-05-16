@@ -179,3 +179,38 @@ button.back-to-top.show:active {
     width: 100%;
     z-index: -1;
 }
+
+.imgCover {
+    transition: transform .2s; /* Animation */
+}
+
+.projectItem:hover .imgCover {
+    transform: scale(1.1);
+
+}
+
+.projectItemItem {
+    position: relative; /* Required for pseudo-element positioning */
+}
+
+.projectItemItem::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #ffde39;
+    transition: width 0.2s ease-in-out; /* Adjust timing and easing as needed */
+
+}
+
+.projectItemItem:hover::before {
+    width: 30%;
+}
+
+
+.projectItemItem:hover .heading a {
+    color: #ffc107 !important;
+}
