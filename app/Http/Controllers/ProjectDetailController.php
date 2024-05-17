@@ -11,7 +11,7 @@ class ProjectDetailController extends Controller
 
     public function index()
     {
-        $projects = RecentProject::orderByDesc('date_develop')->simplePaginate(6);
+        $projects = RecentProject::orderByDesc('date_develop')->paginate(6);
         $personalDetails = PersonalDetail::first();
 
 
@@ -25,7 +25,7 @@ class ProjectDetailController extends Controller
         $project = RecentProject::where('id', $id)->first();
         $personalDetails = PersonalDetail::first();
         return view('project-details', compact('personalDetails', 'project'));
- 
+
     }
 
 

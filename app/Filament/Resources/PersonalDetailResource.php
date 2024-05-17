@@ -34,6 +34,18 @@ class PersonalDetailResource extends Resource
                     ->email()
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('educ')
+                    ->label('School')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\TextInput::make('course')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\DatePicker::make('yrgrad')
+                    ->extraInputAttributes(['type' => 'month'])
+                    ->required(),
+
                 Forms\Components\Textarea::make('introduction')
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('introFooter')
@@ -41,6 +53,9 @@ class PersonalDetailResource extends Resource
                 Forms\Components\TextInput::make('linkedIn')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('facebook')
+                    ->maxLength(255),
+                
+                Forms\Components\TextInput::make('github')
                     ->maxLength(255),
 
                 Forms\Components\TextInput::make('whatsapp')

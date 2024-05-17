@@ -39,7 +39,7 @@
 
             @endforeach
         </div>
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center">
             <div class="col-md-6 text-center ftco-animate">
                 <p>
                     @if(!empty($cvfile))

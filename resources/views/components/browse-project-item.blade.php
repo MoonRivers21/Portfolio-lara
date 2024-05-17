@@ -9,7 +9,7 @@
         <div class="text mt-3 float-right d-block">
             <div class="d-flex align-items-center mb-3 meta">
                 <p class="mb-0">
-                    <span class="mr-2">{{ $project->reformmatedDate() }}</span>
+                    <span class="mr-2"><i class="fa fa-clock"></i> {{ $project->reformmatedDate() }}</span>
 
                 </p>
             </div>

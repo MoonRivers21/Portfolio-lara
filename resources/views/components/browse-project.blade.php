@@ -1,4 +1,5 @@
-@props(['projects', 'paginationNext', 'paginationPrev'])
+@props(['projects', 'paginationNext', 'paginationPrev', 'hasMorepages', 'getCurrentPage', 'totalRecord', 'firstItem', 'lastItem'])
+
 
 <section class="ftco-section">
     <div class="container">
@@ -16,19 +17,50 @@
 
         </div>
 
-        <div class="row justify-content-between">
-            <div class="col-3 d-flex justify-content-center">
-                <div class="border px-5 rounded-sm h3">
-                    <a href="{{ $paginationPrev }}"> <i class="fa fa-arrow-left"></i></a>
+        <div class="row justify-content-between mt-5">
+            @if($getCurrentPage <> 1)
+                <div class="col-3 d-flex justify-content-center">
+                    <a href="{{ $paginationPrev }}">
+                        <div class="px-5 rounded-sm h3">
+                            <i class="fa fa-arrow-left"></i>
+                            Prev
+
+                        </div>
+                    </a>
+                </div>
+            @else
+                <div class="col-3 d-flex justify-content-center">
 
                 </div>
-            </div>
-            <div class="col-3 d-flex justify-content-center">
-                <div class="border px-5 rounded-sm h3">
+            @endif
 
-                    <a href="{{ $paginationNext }}"> <i class="fa fa-arrow-right"></i></a>
-                </div>
+            <div class="col-3 d-flex justify-content-center">
+                <p class="small text-muted">
+                    {!! __('Showing') !!}
+                    <span class="fw-semibold">{{ $firstItem }}</span>
+                    {!! __('to') !!}
+                    <span class="fw-semibold">{{ $lastItem }}</span>
+                    {!! __('of') !!}
+                    <span class="fw-semibold">{{ $totalRecord }}</span>
+                    {!! __('projects') !!}
+                </p>
+
             </div>
+            @if($hasMorepages)
+                <div class="col-3 d-flex justify-content-center">
+                    <a href="{{ $paginationNext }}">
+                        <div class="px-5 rounded-sm h3">
+                            Next
+                            <i class="fa fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            @else
+                <div class="col-3 d-flex justify-content-center">
+
+                </div>
+            @endif
+
         </div>
     </div>
 

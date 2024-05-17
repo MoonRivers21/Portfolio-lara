@@ -14,16 +14,31 @@
                 </div>
                 <div class="blog-slider__pagination"></div>
 
-                <div class="form-inline d-inline-flex w-100">
-                    <div class="p-2 pl-5  mx-auto">
-                        <i class="fa fa-long-arrow-left text-warning slider-button-prev "
-                           style="cursor: pointer"></i>
-                        &nbsp; &nbsp;
-                        <i class="fa fa-long-arrow-right text-warning slider-button-next"
-                           style="cursor: pointer"></i>
-                    </div>
 
+                <div class="mt-3">
+                    <div class="row d-flex justify-content-between ">
+                        <div class="col-4">
+                            <div class="slider-button-prev text-center h3">
+                                <span class="fa-2x text-warning "
+                                      title="Previous"
+                                      style="cursor: pointer">&laquo;</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-4">
+                            <div class="slider-button-next text-center h3">
+                                <span class="fa-2x text-warning "
+                                      title="Next"
+                                      style="cursor: pointer">&raquo;</span>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
+
             </div>
 
 
@@ -37,4 +52,4 @@
         </div>
     </div>
 </section>
- 
+

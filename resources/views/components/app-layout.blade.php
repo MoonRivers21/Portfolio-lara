@@ -25,21 +25,27 @@
           type="image/x-icon">
 
     <link rel="canonical" href="https://ph.linkedin.com/in/nickzworld">
+
+    {{--    <link rel="stylesheet"--}}
+    {{--          href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap-dark.min.css"/>--}}
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
     <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
+
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/project-slider.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css"
-          integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="{{ asset('css/project-slider.css') }}">
+
+ 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -73,9 +79,9 @@
         <div class="row">
             <div class="col-md mb-5">
                 <div class="ftco-footer-widget">
-                    <h2 class="ftco-heading-2">About</h2>
                     <p class="ftco-animate">{{ $about->introFooter }}</p>
-                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                    <h2 class="ftco-heading-2">Let's Connect</h2>
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
                         @if(!empty($about->facebook))
                             <li class="ftco-animate">
                                 <a target="_blank" href="{{ $about->facebook }}">
@@ -236,6 +242,7 @@
         }
     });
 
+
 </script>
 <script>
     // Back to top
@@ -257,6 +264,26 @@
         return false;
     });
 
+
+    const chk = $('#chk');
+    chk.on('change', function () {
+        $('body').toggleClass('dark');
+
+    });
+
+    // SOCIAL PANEL JS
+    const floating_btn = $('.floating-btn');
+    const close_btn = $('.close-btn');
+    const social_panel_container = $('.social-panel-container');
+
+    floating_btn.on('click', function () {
+        social_panel_container.toggleClass('visible');
+    });
+
+    close_btn.on('click', function () {
+        social_panel_container.removeClass('visible');
+
+    })
 
 </script>
 </html>

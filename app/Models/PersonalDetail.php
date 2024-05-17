@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,8 +23,15 @@ class PersonalDetail extends Model
         'birthdate',
         'whatsapp',
         'viber',
-        'cv_file'
+        'cv_file',
+        'educ',
+        'course',
+        'yrgrad',
+        'github'
     ];
 
-
+    public function yearGrad(): string
+    {
+        return Carbon::parse($this->yrgrad)->format('F Y');
+    }
 }

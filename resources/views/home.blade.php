@@ -1,14 +1,14 @@
 <x-app-layout :about="$personalDetails" :cvfile="$personalDetails->cv_file">
 
-
     {{--  Project slider  --}}
     <x-project-slider :projectSlider="$projectSlider"/>
-
-    {{--  Experience --}}
-    <x-experience :experiences="$experiences" :cvfile="$personalDetails->cv_file"/>
+    
 
     {{--  About me  --}}
     <x-about-me :personalDetails="$personalDetails"/>
+
+    {{--  Experience --}}
+    <x-experience :experiences="$experiences" :cvfile="$personalDetails->cv_file"/>
 
     {{--  Technical Skills  --}}
     <x-technical-skills :techskills="$techskills"/>

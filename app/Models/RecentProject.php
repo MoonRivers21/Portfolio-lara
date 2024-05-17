@@ -74,7 +74,8 @@ class RecentProject extends Model
 
     public function reformmatedDate(): string
     {
-        return Carbon::parse($this->date_develop)->format('M d, Y');
+        //return Carbon::parse($this->date_develop)->format('M d, Y');
+        return Carbon::parse($this->date_develop)->diffForHumans();
     }
 
     public function getImagePaths(): array

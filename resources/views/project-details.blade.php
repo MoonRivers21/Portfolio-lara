@@ -1,17 +1,23 @@
 <x-layouts.project-layout :about="$personalDetails" :project="$project">
 
-    <section class="ftco-section">
+    <section class="ftco-section ftco-no-pb">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ftco-animate">
-                    <h5 class="mb-4">{{ $project->project_title }}</h5>
+                    <h5 class="mb-4">
+                        <a href="{{ url()->previous() }}" title="back to previous page">
+                            <i class="fa fa-arrow-left text-warning"></i>
+                        </a>
+                        &nbsp;
+                        {{ $project->project_title }}
+                    </h5>
                 </div>
 
             </div>
 
             <div class="row ftco-animate">
                 <div class="col-md-8">
-                    <div class="row resume-wrap ">
+                    <div class="resume-wrap ">
                         {{ $project->project_desc }}
                     </div>
 
@@ -27,7 +33,7 @@
                                                title="{{$project->project_title}}"
                                                class="image-link-{{ md5($imagePath) }}">
                                                 <img
-                                                    class="p-2 ftco-animate"
+                                                    class="p-2 ftco-animate rounded"
                                                     height="100px"
                                                     alt="Project Image"
                                                     src="{{ asset('storage/'.$imagePath) }}"/>
@@ -46,7 +52,7 @@
                 </div>
 
                 <div class="col-md-4 sidebar-box ftco-animate">
-                    <div class="mb-4">Develop last {{ $project->reformmatedDate() }}</div>
+                    <div class="mb-4">Develop {{ $project->reformmatedDate() }}</div>
 
                     <h3 class="heading-sidebar">Tech Stacks</h3>
                     <ul class="categories">

@@ -11,9 +11,17 @@
     </div>
     <div class="blog-slider__content">
         <span class="blog-slider__code">{{ $project->reformmatedDate() }}</span>
-        <div class="blog-slider__title text-light">{{ $project->project_title }}</div>
+        <div class="blog-slider__title text-light">
+            <a target="_blank" href="{{ route('project.view', $project->id) }}">
+                {{ $project->project_title }}
+            </a>
+        </div>
         <div class="blog-slider__text text-light">
-            {{ $project->longDescProject() }}
+            {{ $project->longDescProject() }} &nbsp;
+            @if(strlen($project->longDescProject()) > 250)
+                <a target="_blank" href="{{ route('project.view', $project->id) }}">Read more</a>
+            @endif
+
             <div class="tagcloud mt-4">
                 @foreach($techStacks as $techStack)
                     <a href="#" class="tag-cloud-link">
@@ -23,6 +31,6 @@
 
             </div>
         </div>
-        <a target="_blank" href="{{ route('project.view', $project->id) }}" class="blog-slider__button">READ MORE</a>
+
     </div>
 </div>
