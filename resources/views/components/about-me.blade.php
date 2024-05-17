@@ -65,6 +65,15 @@
                             @endif
 
 
+                            @if(!empty($personalDetails->github))
+                                <li class="ftco-animate">
+                                    <a target="_blank" href="{{ $personalDetails->github }}">
+                                        <span class="icon-github"></span>
+                                    </a>
+                                </li>
+                            @endif
+
+
                         </ul>
                     </div>
                 </div>
