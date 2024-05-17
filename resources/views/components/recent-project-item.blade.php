@@ -1,6 +1,6 @@
 @props(['title', 'description', 'shortDesc', 'projectImg', 'techStacks', 'link'])
-<div class="col-md-4 mt-3 ">
-    <article class="card ftco-animate">
+<div class="col-md-4 col-sm-12 col-12 ftco-animate justify-content-center d-flex mb-3">
+    <article class="card">
         <div class="cover-img">
             <img src="{{ asset('storage/'.$projectImg) }}"/>
         </div>
