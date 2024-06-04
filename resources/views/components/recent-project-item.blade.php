@@ -10,7 +10,7 @@
             <div class="tagcloud text-sm small">
                 @foreach($techStacks as $techStack)
                     <span
-                        class="tag-cloud-link text-danger border-danger border rounded p-1">{{ $techStack }}</span>
+                        class="tag-cloud-link text-danger border-danger  m-1">{{ $techStack }}</span>
                 @endforeach
 
 

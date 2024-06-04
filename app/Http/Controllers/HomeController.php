@@ -16,7 +16,7 @@ class HomeController extends Controller
         $experiences = Experience::all();
         $techskills = TechnicalSkill::all();
         $techstacks = TechStack::all();
-        $recentProjects = RecentProject::take(3)->get();
+        $recentProjects = RecentProject::inRandomOrder()->take(3)->get();
         $projectSlider = RecentProject::take(5)->latest()->get();
         $personalDetails = PersonalDetail::first();
 

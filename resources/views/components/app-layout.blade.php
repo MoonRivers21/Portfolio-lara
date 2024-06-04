@@ -10,14 +10,22 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Romnick Sevilla - Portfolio, Romnick Sevilla portfolio">
+    <meta name="description" content="{{ $about->introFooter }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@Linkedin">
-    <meta name="twitter:title" content="Romnick Sevilla - Philippines | Propesyunal na Profile | LinkedIn">
+    <meta name="twitter:image" content="{{ asset('images/card-image.png') }}"/>
+    <meta name="twitter:title" content="Romnick Sevilla | Fullstack PHP Developer | Portfolio">
 
     <meta property="profile:first_name" content="Romnick">
     <meta property="profile:last_name" content="Sevilla">
-    <meta property="og:url" content="https://ph.linkedin.com/in/nickzworld">
+
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Romnick Sevilla | Fullstack PHP Developer | Portfolio"/>
+    <meta property="og:description" content="{{ $about->introFooter }}"/>
+    <meta property="og:image" content="{{ asset('images/card-image.png') }}"/>
+    <meta property="og:url" content="https://portfolio.digitechproject.com/">
+    <meta property="og:type" content="website"/>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="shortcut icon"
@@ -45,7 +53,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/project-slider.css') }}">
 
- 
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -209,7 +217,7 @@
 <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
 <script src="{{ asset('js/popper.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
 <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
